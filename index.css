@@ -7,6 +7,7 @@
 body {
     background-color: #ffffff;
     margin: 0;
+    padding: 0;
     font-family: system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.4;
@@ -42,10 +43,10 @@ body {
 }
 
 .header .menu a {
-    margin: 0 0.5rem;
     padding: 0.5rem 1rem;
     font-weight: 500;
     color: #fff;
+    margin-left: 10px;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.16);
 }
