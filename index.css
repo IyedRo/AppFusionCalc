@@ -11,6 +11,7 @@ body {
     font-family: system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.4;
+    text-align: left;
 }
 
 .header {
@@ -77,8 +78,6 @@ body {
 
 main {
     background-color: #efeff0;
-
-    text-align: center;
     width: 92%;
     padding: 20px;
     margin: 20px auto;
