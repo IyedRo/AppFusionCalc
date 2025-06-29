@@ -48,11 +48,11 @@ body {
     color: #fff;
     margin-left: 10px;
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: #ffffff29;
 }
 
 .header .menu a:hover {
-    background-color: rgba(255, 255, 255, 0.32);
+    background-color: #ffffff52;
     transform: translateY(-2px);
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .header #imgh2 {
-    background-color: #cedded;
+    background-color: black;
     height: 50px;
     width: auto;
     cursor: pointer;
@@ -98,7 +98,7 @@ footer {
 
 hr {
     border: none;
-    border: 1px solid #CECECE;
+    border: 1px solid #E3E3E4;
     margin: 20px 0;
 }
 
