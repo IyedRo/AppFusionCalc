@@ -47,7 +47,8 @@
       gap: 16px;
     }
 
-    .app-info {
+    .app-info,
+    .app-info-iys {
       text-align: center;
       background-color: #ffffff;
       border: 1px solid #F2F2F2;
@@ -58,13 +59,32 @@
       height: 210px;
     }
 
-    .app-info:hover {
+    .app-info:hover,
+    .app-info-iys:hover {
       transform: translateY(-5px);
       background-color: #F7FFF7;
       border: 1px solid #2d962d;
     }
 
-    .app-info:active {
+    .app-info-iys {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .app-info-iys::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      background-image: url('IYS.webp');
+      background-size: cover;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    .app-info:active,
+    .app-info-iys:active {
       transform: translateY(0);
     }
 
@@ -77,7 +97,8 @@
       font-weight: 500;
     }
 
-    .app-info:hover .app-name h1 {
+    .app-info:hover .app-name h1,
+    .app-info-iys:hover .app-name h1 {
       color: #2d962d;
     }
   </style>
@@ -116,7 +137,7 @@
       <span class="span1">Click on an app icon below to download:</span>
     </div>
     <div class="app-row">
-      <div class="app-info"
+      <div class="app-info-iys"
         onclick="window.location.href='https://mega.nz/file/5FBg1DLZ#QBHw2CDrce95BrZdpFiwWvP8KxR2SX8rSP8yRGOD4mw';">
         <div class="app-icon">
           <img src="FlexiOptimizerIYR.webp" alt="LogoIYR1" width="100px" height="100px"
@@ -126,7 +147,7 @@
           <h1>FlexiOptimizer</h1>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-info-iys"
         onclick="window.location.href='https://mega.nz/file/AZ5gQBAK#o2wE6RKRZfT-DvycsdsEVzdbeXnNm5NWhpbL7_1E1iQ';">
         <div class="app-icon">
           <img src="YedGames.webp" alt="LogoIYR2" width="100px" height="100px"
@@ -136,7 +157,7 @@
           <h1>SpaceOpen</h1>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-info-iys"
         onclick="window.location.href='https://mega.nz/file/JJ50DAgI#T2zQItS1tx-eiR3l0__if00POFbBJkAFu_O3oaGE3ZA';">
         <div class="app-icon">
           <img src="ColorFusion.webp" alt="LogoIYR3" width="100px" height="100px"
@@ -166,7 +187,7 @@
           <h1>Counter-Strike1.6</h1>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-info-iys"
         onclick="window.location.href='https://mega.nz/file/NNoDnRBI#s4Yz6oZv5saIvFWp3DMdtMQemux2WmpV5bbAZpg_Olc';">
         <div class="app-icon">
           <img src="MinerSeeker.webp" alt="LogoIYR6" width="100px" height="100px"
@@ -236,7 +257,7 @@
           <h1>Pac-Man</h1>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-info-iys"
         onclick="window.location.href='https://mega.nz/file/kZ4XRZ7T#aEehZebSu7aPGOzkRVqeFSWtelTt3yyVxNR_OsfW44k';">
         <div class="app-icon">
           <img src="GhostIP.webp" alt="LogoIYR13" width="100px" height="100px"
@@ -256,7 +277,7 @@
           <h1>ResourceHacker</h1>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-info-iys"
         onclick="window.location.href='https://mega.nz/file/NAAl3aJS#AilMR_0Ir8Mh6HUD-iwLSeys3hGIJQXjX1NZPtKXg90';">
         <div class="app-icon">
           <img src="exam.webp" alt="LogoIYR15" width="100px" height="100px"
@@ -266,7 +287,7 @@
           <h1>Synthèse1</h1>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-info-iys"
         onclick="window.location.href='https://mega.nz/file/MIQQEISR#Ft4HW_7n-Gou0NSLAeR2Ky3m420IIVPWKh_i1kt-sOQ';">
         <div class="app-icon">
           <img src="PowerOfEnergy.webp" alt="LogoIYR16" width="100px" height="100px"
