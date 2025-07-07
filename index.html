@@ -70,8 +70,7 @@
   <header class="header">
     <a href="https://github.com/IyedRo"><img id="imgh2" src="IYS.webp" alt="IYR(Apk,Color,Calc)logo"
         title="IYR(Apk,Color,Calc)" /></a>
-        <div style="text-align: center; font-size: 18px; margin-top: 20px;">VISITER/<span id="visits"></span>
-</div>
+    <p>This site has been visited <span id="count">...</span> times.</p>
     <div class="menu">
       <a href="index.html">Home</a>
       <a href="WinTrust_11.html">WinTrust 11</a>
@@ -491,12 +490,10 @@
 
 </html>
 
-
-
 <script>
   fetch('https://api.countapi.xyz/hit/web-apk-color-calculator/visits')
     .then(res => res.json())
-    .then(res => {
-      document.getElementById('visits').innerText = res.value;
+    .then(data => {
+      document.getElementById('count').innerText = data.value;
     });
 </script>
