@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="index.css" />
   <style>
     .main-content {
-      width: 52%;
+      width: 70%;
       text-align: center;
       font-size: 32px;
       text-transform: capitalize;
@@ -43,63 +43,84 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 20px 0 0 0;
+      margin: 16px 0;
       gap: 16px;
     }
 
-    .app-info,
-    .app-info-iys {
+    .app-box {
       text-align: center;
       background-color: #ffffff;
       border: 1px solid #F2F2F2;
       align-items: center;
       padding: 12px 0 0px 0;
       cursor: pointer;
-      width: 140px;
+      width: 180px;
       height: 210px;
     }
 
-    .app-info:hover,
-    .app-info-iys:hover {
+    .app-box:hover {
       transform: translateY(-5px);
       background-color: #F7FFF7;
       border: 1px solid #2d962d;
     }
 
-    .app-info-iys {
-      overflow: hidden;
-      position: relative;
+    .app-box:hover .app-icon img {
+      transform: scale(1.04);
     }
 
-    .app-info-iys::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 60px;
-      height: 60px;
-      background-image: url('IYS.webp');
-      background-size: cover;
-      clip-path: polygon(0 0, 100% 0, 0 100%);
-    }
-
-    .app-info:active,
-    .app-info-iys:active {
+    .app-box:active {
       transform: translateY(0);
-    }
-
-    .app-icon img:hover {
-      transform: scale(1.03);
     }
 
     .app-name h1 {
       font-size: 18px;
-      font-weight: 500;
+      font-weight: bold;
     }
 
-    .app-info:hover .app-name h1,
-    .app-info-iys:hover .app-name h1 {
+    .app-box:hover .app-name h1 {
       color: #2d962d;
+    }
+
+    .app-details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .app-version {
+      background: #e8f5e9;
+      color: #2d962d;
+      padding: 4px 8px;
+      font-weight: bold;
+    }
+
+    .app-size {
+      background: #e3f2fd;
+      color: #1976d2;
+      padding: 4px 8px;
+      font-weight: bold;
+    }
+
+    .iys-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #2d962d, #1c6b1c);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    .iys-badge::after {
+      content: "IYS";
+      color: #fff;
+      font-weight: bold;
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      transform: rotate(-45deg);
     }
   </style>
 </head>
@@ -137,400 +158,595 @@
       <span class="span1">Click on an app icon below to download:</span>
     </div>
     <div class="app-row">
-      <div class="app-info-iys"
+      <div class="app-box iys-app"
         onclick="window.location.href='https://mega.nz/file/5FBg1DLZ#QBHw2CDrce95BrZdpFiwWvP8KxR2SX8rSP8yRGOD4mw';">
+        <div class="iys-badge"></div>
         <div class="app-icon">
-          <img src="FlexiOptimizerIYS.webp" alt="LogoIYS1" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="FlexiOptimizerIYS.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>FlexiOptimizer</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>FlexiOptimizer</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v2.5</span>
+            <span class="app-size">3.8 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info-iys"
+      <div class="app-box iys-app"
         onclick="window.location.href='https://mega.nz/file/AZ5gQBAK#o2wE6RKRZfT-DvycsdsEVzdbeXnNm5NWhpbL7_1E1iQ';">
+        <div class="iys-badge"></div>
         <div class="app-icon">
-          <img src="YedGames.webp" alt="LogoIYS2" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='';" />
+          <img src="YedGames.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>SpaceOpen</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>SpaceOpen</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.2</span>
+            <span class="app-size">12.5 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info-iys"
+      <div class="app-box iys-app"
         onclick="window.location.href='https://mega.nz/file/JJ50DAgI#T2zQItS1tx-eiR3l0__if00POFbBJkAFu_O3oaGE3ZA';">
+        <div class="iys-badge"></div>
         <div class="app-icon">
-          <img src="ColorFusion.webp" alt="LogoIYS3" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="ColorFusion.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>ColorFusion</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>ColorFusion</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v3.0</span>
+            <span class="app-size">5.2 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/UYZlWbaT#rLB6opPXyjh4sq0h7ALk_LkgwJmBtFB5smBZ3cgEdn8';">
         <div class="app-icon">
-          <img src="ThrottleStop.webp" alt="LogoIYS4" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="ThrottleStop.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>ThrottleStop</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>ThrottleStop</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v9.6</span>
+            <span class="app-size">2.1 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/ZIxV0arC#8gBfFnzk1A0nORAKrgHhfQdKFst0QoZSRhTLCGov7U0';">
         <div class="app-icon">
-          <img src="cstrike.webp" alt="LogoIYS5" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="cstrike.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Counter-Strike1.6</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Counter-Strike 1.6</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.6</span>
+            <span class="app-size">185 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info-iys"
+      <div class="app-box iys-app"
         onclick="window.location.href='https://mega.nz/file/NNoDnRBI#s4Yz6oZv5saIvFWp3DMdtMQemux2WmpV5bbAZpg_Olc';">
+        <div class="iys-badge"></div>
         <div class="app-icon">
-          <img src="MinerSeeker.webp" alt="LogoIYS6" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="MinerSeeker.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>MinerSeeker</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>MinerSeeker</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.8</span>
+            <span class="app-size">0.9 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/1ZI20QjC#qeT_OKn66oUQ95VhFjG0hTid5Wo0l2Jvb1-lnUNhHQE';">
         <div class="app-icon">
-          <img src="ase.webp" alt="LogoIYS7" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="ase.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Aseprite</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Aseprite</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.3</span>
+            <span class="app-size">15.7 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/NdRzWTzA#dm_Go5Mzs8geuH_H5B_9Q5dGJzp9JW_trXxpU0E-2rQ';">
         <div class="app-icon">
-          <img src="LosslessScaling.webp" alt="LogoIYS8" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="LosslessScaling.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Lossless Scaling</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Lossless Scaling</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v2.5</span>
+            <span class="app-size">8.3 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/1UpGCKCT#ctbIdOtlhDU5yqT2nK1epqTHv8t6RwnEgwWaKN_b3Gk';">
         <div class="app-icon">
-          <img src="FileOptimizer.webp" alt="LogoIYS9" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="FileOptimizer.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>FileOptimizer</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>FileOptimizer</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v16.50</span>
+            <span class="app-size">12.9 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/VBYn3Q4B#2KIH4pOMPcAI752ZJJujTekiu3oV_P5bsGuYpIeVFq0';">
         <div class="app-icon">
-          <img src="StickVetrea.webp" alt="LogoIYS10" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="StickVetrea.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Stick Vetrea</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Stick Vetrea</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.0</span>
+            <span class="app-size">45 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/IFZmxAJB#6BBX9_Jalr1MNxaL6Z391lVrfgMdbfAzbJdQiR_M9Fk';">
         <div class="app-icon">
-          <img src="StickSoldiersII.webp" alt="LogoIYS11" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="StickSoldiersII.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Stick Soldiers II</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Stick Soldiers II</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.1</span>
+            <span class="app-size">62 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/UUJXHIAT#jB6L_xZLevAxaJAm57WmHOOMp7m0daBQGo1mqIqrbdA';">
         <div class="app-icon">
-          <img src="Pac-Man.webp" alt="LogoIYS12" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Pac-Man.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Pac-Man</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Pac-Man</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">Classic</span>
+            <span class="app-size">8.5 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info-iys"
+      <div class="app-box iys-app"
         onclick="window.location.href='https://mega.nz/file/kZ4XRZ7T#aEehZebSu7aPGOzkRVqeFSWtelTt3yyVxNR_OsfW44k';">
+        <div class="iys-badge"></div>
         <div class="app-icon">
-          <img src="GhostIP.webp" alt="LogoIYS13" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="GhostIP.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>GhostIP</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>GhostIP</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.5</span>
+            <span class="app-size">0.7 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/kIgSlIzL#Ir-E5nP2dNTfAXKL8n9Jy2gxTd129CAIDK4oEd3Woj0';">
         <div class="app-icon">
-          <img src="ResourceHacker.webp" alt="LogoIYS14" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="ResourceHacker.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>ResourceHacker</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>ResourceHacker</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v5.2.7</span>
+            <span class="app-size">3.5 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info-iys"
+      <div class="app-box iys-app"
         onclick="window.location.href='https://mega.nz/file/NAAl3aJS#AilMR_0Ir8Mh6HUD-iwLSeys3hGIJQXjX1NZPtKXg90';">
+        <div class="iys-badge"></div>
         <div class="app-icon">
-          <img src="exam.webp" alt="LogoIYS15" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="exam.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Synthèse1</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Synthèse1</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.0</span>
+            <span class="app-size">1.2 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info-iys"
+      <div class="app-box iys-app"
         onclick="window.location.href='https://mega.nz/file/MIQQEISR#Ft4HW_7n-Gou0NSLAeR2Ky3m420IIVPWKh_i1kt-sOQ';">
+        <div class="iys-badge"></div>
         <div class="app-icon">
-          <img src="PowerOfEnergy.webp" alt="LogoIYS16" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="PowerOfEnergy.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>PowerOfEnergy</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>PowerOfEnergy</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v2.3</span>
+            <span class="app-size">5.8 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/cMQG3LhI#LSk6UXxKiaE_itXzFqRUhE6EvqTpjpx0julQDZMUawo';">
         <div class="app-icon">
-          <img src="Animate.webp" alt="LogoIYS17" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Animate.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Animate CC 2019</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Animate CC 2019</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">2019</span>
+            <span class="app-size">1.8 GB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/4NRgHYTJ#iaJZ8H6H3TN7js3RMlzrhFsDr5OgO5lEpSPMxq6yayw';">
         <div class="app-icon">
-          <img src="Flash8.webp" alt="LogoIYS18" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Flash8.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Flash 8</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Flash 8</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v8.0</span>
+            <span class="app-size">78 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/EI5kTDpa#4JDPLLyxgYkllJhVoTJEDSUbRbVw--60AJ7rIPmy0t0';">
         <div class="app-icon">
-          <img src="Office2007Pro.webp" alt="LogoIYS19" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Office2007Pro.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Office 2007 Pro Eng</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Office 2007 Pro Eng</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">2007</span>
+            <span class="app-size">650 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/5ZAF3C6D#yqSlUN9Npo4kwNgJ8jQR7Oe5TOZVcV3nSX797gRStiQ';">
         <div class="app-icon">
-          <img src="Office2007Pro.webp" alt="LogoIYS20" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Office2007Pro.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Office 2007 Pro Fr</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Office 2007 Pro Fr</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">2007</span>
+            <span class="app-size">680 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/4cRBDJpL#YR97NsPlq3PKvsSuMG1CLfNRvn7mDfCjY9FiacRLeBI';">
         <div class="app-icon">
-          <img src="Ravenfield.webp" alt="LogoIYS21" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Ravenfield.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Ravenfield</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Ravenfield</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">EA26</span>
+            <span class="app-size">850 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/9RRAnCoY#ST3VrXoQLnFR4QjWfBBtBgU7L4S59ZfVy_BUPQLz-fc';">
         <div class="app-icon">
-          <img src="GeometryDash.webp" alt="LogoIYS22" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="GeometryDash.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>GeometryDash</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>GeometryDash</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v2.11</span>
+            <span class="app-size">95 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/NNYjjAhK#Z7LtYKfxc2pQhsop5CjdEH74u--JkETEIPicDKMmhMs';">
         <div class="app-icon">
-          <img src="StardewValley.webp" alt="LogoIYS23" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="StardewValley.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>StardewValley</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>StardewValley</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.5.6</span>
+            <span class="app-size">500 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/YMJUxJCb#0vlkAKMDISDBQaHuqo_FgH1jsABgmNjvcG4CxhFmGe0';">
         <div class="app-icon">
-          <img src="SAFlashPlayer.webp" alt="LogoIYS24" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="SAFlashPlayer.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>SAFlashPlayer</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>SAFlashPlayer</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v22.0</span>
+            <span class="app-size">15 MB</span>
+          </div>
         </div>
       </div>
     </div>
     <hr />
     <div>
-      <h2>Download Apps <span style="color: #ff1a1a">(.apk)</span><br /></h2>
-      <span class="span1">Click on an app icon below to download:</span>
+      <h2>Download Apps <span style="color: #ff1a1a">(.apk)</span></h2>
+      <span class="span1">Click on any app to download:</span>
     </div>
     <div class="app-row">
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/FQIQgb7a#4_kz7CiqSQX4KJ6La-XZVuqMsvw6LG4_tDWatUNg9dM';">
         <div class="app-icon">
-          <img src="Remini.webp" alt="Logo1" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Remini.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Remini</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Remini</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v3.8.4</span>
+            <span class="app-size">95 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/ZNw0jbzQ#rv5qYa2Nl2QuIqS8e3qbX9vShpI98b8xUyFHfOAQDXk';">
         <div class="app-icon">
-          <img src="Picsart.webp" alt="Logo2" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Picsart.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Picsart</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Picsart</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v24.6.5</span>
+            <span class="app-size">85 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/1dA3zALB#Poi2-t0GONTVkJeYwkh0yp4FEUR7xdMKO27B7B85bUE';">
         <div class="app-icon">
-          <img src="AdobeLightroom.webp" alt="Logo3" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="AdobeLightroom.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Adobe Lightroom</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Adobe Lightroom</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v8.4.1</span>
+            <span class="app-size">210 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/MMAmhS5Q#oYbvLBSf8EfU-93Ft0a7zkWXzwx-0YflOixJRh7c2cs';">
         <div class="app-icon">
-          <img src="Capcut.webp" alt="Logo4" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Capcut.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Capcut</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Capcut</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v11.0.0</span>
+            <span class="app-size">180 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/gIJVHDCK#W_YYr2UNRjFzAD8_7vm4JsYzlPgiqMfmCke3MfLz0Sk';">
         <div class="app-icon">
-          <img src="Snapseed.webp" alt="Logo5" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Snapseed.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Snapseed</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Snapseed</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v2.22</span>
+            <span class="app-size">75 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/UdohWCQK#Cnvi-46VDbehMI0I80L2DyvVYGZz16R5JnK2XrHqq5g';">
         <div class="app-icon">
-          <img src="Trebedit.webp" alt="Logo6" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Trebedit.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Trebedit</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Trebedit</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.9.8</span>
+            <span class="app-size">15 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/Rd5VRBZY#87HUwE1ldvSaD8Io06xqHIAYSL721qSJj75TjmUq7iM';">
         <div class="app-icon">
-          <img src="Pydroid3.webp" alt="Logo7" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Pydroid3.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Pydroid 3</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Pydroid 3</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v7.0_arm</span>
+            <span class="app-size">35 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://drive.google.com/file/d/13SfUc87FN8PUPnJa2PUwjHOKmVikxwga/view?usp=drive_link';">
         <div class="app-icon">
-          <img src="MtManager.webp" alt="Logo8" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="MtManager.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Mt Manager</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Mt Manager</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v2.14.0</span>
+            <span class="app-size">12 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/0ApTGCbD#JW69U5eQpUaq3ts-Qs2lR_8ExwjEjV3U5rfvTa1pgRs';">
         <div class="app-icon">
-          <img src="GameKey.webp" alt="Logo9" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="GameKey.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Game Helper</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Game Helper</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.5.3</span>
+            <span class="app-size">8.5 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/pExhHLrb#qPbzz_GFe5P_Qk4CZBjoQgSzgXl0qjjyun_Qn_-Qg9Q';">
         <div class="app-icon">
-          <img src="Lucky-Patcher.webp" alt="Logo10" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Lucky-Patcher.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Lucky-Patcher</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Lucky-Patcher</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v10.9.1</span>
+            <span class="app-size">25 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/BAQHSCSa#LPYzWIDOT04xoAsOwshM-H1YZHlxlSBaQj2PqDnC1vQ';">
         <div class="app-icon">
-          <img src="AppManager.webp" alt="Logo11" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="AppManager.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>App Manager</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>App Manager</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v3.5.2</span>
+            <span class="app-size">7.8 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/cBZDiYKA#stYabLHhEhi3UTZ1YSQ_3Al2p-VPlvziUBvh-GuENYg';">
         <div class="app-icon">
-          <img src="AntiSplit.webp" alt="Logo12" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="AntiSplit.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>AntiSplit</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>AntiSplit</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.0.4</span>
+            <span class="app-size">5.2 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/YUYGTQ5J#aqq0sB_PlVqBya6ipg6dSQcJMp8MlW_mrseJzVkVA8s';">
         <div class="app-icon">
-          <img src="ZArchiverPro.webp" alt="Logo13" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="ZArchiverPro.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>ZArchiver Pro</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>ZArchiver Pro</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.0.9</span>
+            <span class="app-size">10.3 MB</span>
+          </div>
         </div>
       </div>
-      <div class="app-info"
+      <div class="app-box"
         onclick="window.location.href='https://mega.nz/file/NdgXgJzT#u1wdWfLj5Dfcc1Dwc05Cnd39NU7ujgpVftTPJmRi48E';">
         <div class="app-icon">
-          <img src="Altaqwaa.webp" alt="Logo13" width="100px" height="100px"
-            onerror="this.onerror=null; this.src='EmptyApp.svg';" />
+          <img src="Altaqwaa.webp" width="100" height="100" />
         </div>
-        <div class="app-name">
-          <h1>Altaqwaa</h1>
+        <div class="app-content">
+          <div class="app-name">
+            <h3>Altaqwaa</h3>
+          </div>
+          <div class="app-details">
+            <span class="app-version">v1.2.0</span>
+            <span class="app-size">18 MB</span>
+          </div>
         </div>
       </div>
     </div>
   </main>
   <footer class="footer">
     <p>&copy; 2025 CustomSpace Project. All rights reserved.</p>
-    <p>
-      This CustomSpace is provided for educational purposes only.
-    </p>
+    <p>This CustomSpace is provided for educational purposes only.</p>
   </footer>
 </body>
 
